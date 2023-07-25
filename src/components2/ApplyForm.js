@@ -89,34 +89,36 @@ const callApply = async () => {
   return (
     <>
     <Navbar2 />
-      <div className="wrapper3">
-        <div className="wrapper4">
-          <h3 className="h3">Apply to Swap</h3>
-          <div id='demo'></div>
+      <div className="container px-4">
+        <div className="container wrapper pb-5 px-4 pt-3">
+        <div className="row">
+          <div className="col-md-7 text-center">
+          <h3 className="h3 text-center">Apply to Swap</h3>
+          <div id='demo' className="demo2"></div>
           <form method="POST" id='register-form'>
-          <div>
-              <img src={logo1} alt="logo1" className="img3"></img>
-            <input type="text" name="course" value={user.course} onChange={handleInputs} placeholder="Course" className="input2" />
+          <div className="d-flex justify-content-center py-2 fs-5">
+              <img src={logo1} alt="logo1" className="img1 me-2 mt-2"></img>
+              <input type="text" name="course" value={user.course} onChange={handleInputs} placeholder="Course (eg. Btech/MBA/etc)" className="px-3" />
           </div>
-          <div>
-              <img src={logo2} alt="logo" className="img4"></img>
-              <input type="text" name="branch" value={user.branch} onChange={handleInputs} placeholder="Branch" className="input2" />
+          <div className="d-flex justify-content-center py-2 fs-5">
+              <img src={logo2} alt="logo" className="img1 me-2 mt-2"></img>
+              <input type="text" name="branch" value={user.branch} onChange={handleInputs} placeholder="Branch (eg. CSE/IT/etc)" className="px-3" />
           </div>
-          <div>
-            <img src={logo3} alt="logo3" className="img3"></img>
-            <input type="text" name="batch" value={user.batch} onChange={handleInputs} placeholder="Batch" className="input2" />
+          <div className="d-flex justify-content-center py-2 fs-5">
+            <img src={logo3} alt="logo3" className="img1 me-2 mt-2"></img>
+            <input type="text" name="batch" value={user.batch} onChange={handleInputs} placeholder="Batch (eg. B15)" className="px-3" />
           </div>
-          <div>
-            <img src={logo4} alt="logo4" className="img4"></img>
-            <input type="text" name="year" value={user.year} onChange={handleInputs} placeholder="Year" className="input2" />
+          <div className="d-flex justify-content-center py-2 fs-5">
+            <img src={logo4} alt="logo4" className="img1 me-2 mt-2"></img>
+            <input type="text" name="year" value={user.year} onChange={handleInputs} placeholder="Year (eg. 1st/2nd/3rd/etc)" className="px-3" />
           </div>
-          <div> 
-            <img src={logo5} alt="logo5" className="img3"></img>
-            <input type="text" name="esubject" value={user.esubject} onChange={handleInputs} placeholder="Existing Subject" className="input2" />
+          <div className="d-flex justify-content-center py-2 fs-5"> 
+            <img src={logo5} alt="logo5" className="img1 me-2 mt-2"></img>
+            <input type="text" name="esubject" value={user.esubject} onChange={handleInputs} placeholder="Existing Subject" className="px-3" />
           </div>
-          <div>
-          <img src={logo5} alt="logo5" className="img4"></img>
-            <input type="text" name="dsubject" value={user.dsubject} onChange={handleInputs} placeholder="Desired Subject" className="input2" />
+          <div className="d-flex justify-content-center py-2 fs-5">
+          <img src={logo5} alt="logo5" className="img1 me-2 mt-2"></img>
+            <input type="text" name="dsubject" value={user.dsubject} onChange={handleInputs} placeholder="Desired Subject" className="px-3" />
           </div>
             <button
               input='true'
@@ -129,7 +131,11 @@ const callApply = async () => {
             </button>
           </form>
         </div>
+        <div className="col-md-4 d-none d-md-block">
         <img src={logo} alt="logo" className="left2"></img>
+        </div>
+        </div>
+      </div>
       </div>
     </>
   );

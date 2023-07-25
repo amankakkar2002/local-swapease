@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Navbar2 from "./Navbar2";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     name: "",
     email: "",
@@ -13,8 +15,10 @@ const Contact = () => {
       const res = await fetch("/getdata", {
         method: "GET",
         headers: {
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
+        credentials: "include",
       });
       const data = await res.json();
       setUserData({
@@ -30,6 +34,7 @@ const Contact = () => {
       }
     } catch (err) {
       console.log(err);
+      navigate("/login");
     }
   };
   useEffect(() => {
@@ -57,65 +62,81 @@ const Contact = () => {
         message,
       }),
     });
-    const data=await res.json();
+    const data = await res.json();
 
-    if(!data)
-    {
-      console.log('Message not found');
-    }
-    else{
-      alert('Message sent successfully....');
-      setUserData({...userData,message:""})
+    if (!data) {
+      console.log("Message not found");
+    } else {
+      alert("Message sent successfully....");
+      setUserData({ ...userData, message: "" });
     }
   };
   return (
     <>
       <Navbar2 />
-      <div className="wrapper8">
-        <h3 align="left"> Contact Us!!</h3>
-        <form method='POST' id="contact_form">
-          <input
-            type="text"
-            name="name"
-            className="left3"
-            value={userData.name}
-            onChange={handleInputs}
-            placeholder="Your Name"
-            required
-          ></input>
-          <input
-            type="text"
-            name="email"
-            className="right3"
-            value={userData.email}
-            onChange={handleInputs}
-            placeholder="Your Email"
-            required
-          ></input>
-          <input
-            type="text"
-            name="enrollment"
-            className="right4"
-            value={userData.enrollment}
-            onChange={handleInputs}
-            placeholder="Your Enrollment"
-            required
-          ></input>
-          <div>
-            <textarea
-              name="message"
-              placeholder="Your Message...."
-              value={userData.message}
-              onChange={handleInputs}
-              className="textarea1"
-              cols={80}
-              rows={7}
-            ></textarea>
-          </div>
-          <button type="submit" onClick={contactForm} className="signinbutton">
-            Send Message{" "}
-          </button>
-        </form>
+      <div className="container">
+        <div className="container wrapper pb-5 px-4 pt-3">
+          <h3 className="text-center pb-3"> Contact Us!!</h3>
+          <form method="POST" id="contact_form">
+            <div className="row">
+              <div className="col-md-4 pb-4 text-center">
+                <input
+                  type="text"
+                  name="name"
+                  className="px-2 text-center border rounded"
+                  value={userData.name}
+                  onChange={handleInputs}
+                  placeholder="Your Name"
+                  required
+                  readOnly
+                ></input>
+              </div>
+              <div className="col-md-4 pb-4 text-center">
+                <input
+                  type="text"
+                  name="email"
+                  className="px-2 text-center border rounded"
+                  value={userData.email}
+                  onChange={handleInputs}
+                  placeholder="Your Email"
+                  required
+                  readOnly
+                ></input>
+              </div>
+              <div className="col-md-4 pb-4 text-center">
+                <input
+                  type="text"
+                  name="enrollment"
+                  className="px-2 text-center border rounded"
+                  value={userData.enrollment}
+                  onChange={handleInputs}
+                  placeholder="Your Enrollment"
+                  required
+                  readOnly
+                ></input>
+              </div>
+            </div>
+            <div className="mx-4 text-center p-3" style={{ maxWidth: "100%" }}>
+              <textarea 
+                name="message"
+                placeholder="Your Message...."
+                value={userData.message}
+                onChange={handleInputs}
+                className="p-3"
+                style={{ width: "100%", height: "auto" , border:"1px soild black", borderRadius:"10px"}}
+              ></textarea>
+            </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                onClick={contactForm}
+                className="signinbutton"
+              >
+                Send Message{" "}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );

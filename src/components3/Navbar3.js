@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
 import logo from "../images/icon1.png";
 
-const Navbar2 = () => {
+const Navbar3 = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -24,23 +24,13 @@ const Navbar2 = () => {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
               <li className="nav-item">
-                <NavLink className="nav-link" aria-current="page" to="/details">
-                  Details
+                <NavLink className="nav-link" aria-current="page" to="/messages">
+                  Messages
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/applyform">
-                  Apply
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" aria-current="page" to="/available">
-                  Available
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" aria-current="page" to="/attendance">
-                  Attendance Predictor   
+                <NavLink className="nav-link" to="/accepted">
+                  Accepted
                 </NavLink>
               </li>
               {/* <li className="nav-item">
@@ -48,16 +38,6 @@ const Navbar2 = () => {
                   Course Description
                 </NavLink>
               </li> */}
-              <li className="nav-item">
-                <NavLink className="nav-link" aria-current="page" to="/materials">
-                  Materials
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" aria-current="page" to="/contact">
-                  Contact Us
-                </NavLink>
-              </li>
               <li className="nav-item">
                 <NavLink className="nav-link" aria-current="page" to="/logout">
                   LogOut
@@ -70,4 +50,4 @@ const Navbar2 = () => {
     </>
   );
 };
-export default Navbar2;
+export default Navbar3;
