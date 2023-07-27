@@ -7,7 +7,6 @@ import AboutUs from "./components/AboutUs";
 import ApplyForm from "./components2/ApplyForm";
 import AttendancePredictor from "./components2/AttendancePredictor";
 import Contact from "./components2/Contact";
-// import Description from "./components2/Description";
 import Details from "./components2/Details";
 import Navbar2 from "./components2/Navbar2";
 import Materials from "./components2/Materials";
