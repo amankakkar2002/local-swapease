@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .App-logo {
@@ -22,6 +24,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(134, 55, 55);
+  font-family: 'Poppins', sans-serif;
 }
 
 .App-link {
@@ -48,11 +51,13 @@
   box-sizing: border-box;
   /* font-family: "Poppins", sans-serif; */
   /* overflow: hidden; */
+  font-family: 'Poppins', sans-serif;
 }
 body{
   background: #ffffff;
   /* font-family: 'Roboto Slab', serif; */
-  font-family: 'Cambo', serif !important;
+  font-family: 'Poppins', sans-serif;
+/*   font-family: 'Cambo', serif !important; */
 }
 .wrapper{
   box-shadow: 0 10px 35px rgba(-5, -5, 5, 5);
@@ -128,17 +133,35 @@ label{
 }
 
 form input{
-  border: none;
+/*   border: none;
   border-radius: 50px;
   border-bottom: 1px solid rgb(109, 106, 106);
+  width: 70%; */
+
+
+
+  border: none;
+  border-radius: 5px;
+  /* border-bottom: 1px solid rgb(109, 106, 106); */
+  border: 2px solid #07001f;
   width: 70%;
+  font-size: 22px;
 }
 
 form input.select{
-  border: none;
+/*   border: none;
   border-radius: 50px;
   border-bottom: 1px solid rgb(109, 106, 106);
+  width: 70%; */
+
+
+  border: none;
+  border-radius: 5px;
+  /* border-bottom: 1px solid rgb(109, 106, 106); */
   width: 70%;
+
+
+  
 }
 
 .img1
